@@ -1,0 +1,41 @@
+@api = http://localhost:3000/api
+GET {{api}}/tasks
+###
+GET {{api}}/task/1
+###
+POST {{api}}/task
+content-type:application/json
+
+{
+    "titulo":"tarea 1",
+    "descripcion":"descripcion tarea 1",
+    "estatus":true,
+    "fecha_entrega":"2023-05-18",
+    "publico":true,
+    "comentarios":"buena",
+    "usuario_creador":1,
+    "responsable":2,
+    "tags":"",
+    "archivo":""
+}
+###
+DELETE  {{api}}/task/4
+
+###
+PATCH  {{api}}/task/1
+content-type:application/json
+
+{
+    "titulo":"tarea edit",
+    "descripcion":"descripcion tarea edit",
+    "estatus":true,
+    "fecha_entrega":"2023-05-22",
+    "publico":true,
+    "comentarios":"mala",
+    "responsable":3,
+    "tags":"prueba",
+    "archivo":""
+}
+
+###
+POST   {{api}}/upload
